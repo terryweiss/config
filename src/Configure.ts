@@ -218,7 +218,7 @@ class Configure {
 	 * Populates yargs with cli definitions
 	 */
 	private defineCli() {
-		for ( let [  value ] of this.flagsMap ) {
+		for ( let [  key, value ] of this.flagsMap ) {
 			this.defineCliOption( value );
 		}
 	}
