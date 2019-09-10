@@ -1,5 +1,5 @@
 /**
- * @module ccconfig
+ * @module config
  */
 import { Config } from "./Configure";
 

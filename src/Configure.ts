@@ -1,7 +1,7 @@
 /**
  * This module contains the configuration manager and the configuration instance. At runtime the instance is a singleton that hides the manager from the consumer,
  * but exposes the public management methods to load the configuration and control what can be interpreted. The Config class is the instance and wraps up the
- * features for consumtion.
+ * features for consumption.
  *
 
  */
@@ -218,7 +218,7 @@ class Configure {
 	 * Populates yargs with cli definitions
 	 */
 	private defineCli() {
-		for ( let [ key, value ] of this.flagsMap ) {
+		for ( let [  value ] of this.flagsMap ) {
 			this.defineCliOption( value );
 		}
 	}
@@ -252,6 +252,7 @@ export class Config {
 		this.__cmgr.option( o );
 	}
 
+	// noinspection JSUnusedGlobalSymbols
 	/**
 	 * Set multiple options at once. See [[IOption]] for details on what you can decorate an option with.
 	 * @param os The options to set
@@ -266,6 +267,7 @@ export class Config {
 		}
 	}
 
+	// noinspection JSUnusedGlobalSymbols
 	/**
 	 * This will return the list of files that are searched when configuration is loaded.
 	 */
@@ -284,6 +286,7 @@ export class Config {
 		}
 	}
 
+	// noinspection JSUnusedGlobalSymbols
 	/**
 	 * This completely resets the configuration. You will need to [[load]] it again afterwards. But if you pick up late options, this will allow you to
 	 * start over.

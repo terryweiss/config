@@ -1,6 +1,6 @@
 /**
  * This is how you define an Option you want to capture. All are optional except `name` which will be used to identify
- * the option. If you do not define a `flag` or `shortFlag`, the option will not be avilable from the CLI. `envFlag` determines if there the
+ * the option. If you do not define a `flag` or `shortFlag`, the option will not be available from the CLI. `envFlag` determines if there the
  * system will look for an environment variable to drive the option
  */
 export interface IOption {
@@ -25,7 +25,7 @@ export interface IOption {
 	 */
 	envFlag?: string;
 	/**
-	 * The path to the option after loading. This path will also be used to load coniguration files.
+	 * The path to the option after loading. This path will also be used to load configuration files.
 	 */
 	path?: string;
 	/**
@@ -51,6 +51,7 @@ export interface IOption {
  * The data types the option system recognizes
  */
 export enum Types {
+	// noinspection JSUnusedGlobalSymbols,JSUnusedGlobalSymbols,JSUnusedGlobalSymbols
 	string  = "string",
 	array   = "array",
 	number  = "number",
