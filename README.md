@@ -1,4 +1,4 @@
-__**CC Configuration**__
+#Config
 
 
 
@@ -12,7 +12,7 @@ There are three ways to get configuration: command line, configuration file, and
 
 Configuration files should be used for defaults that rarely change. We prefer YAML files over JSON because they are easier to edit, support comments and are just less idiosyncratic. But we support JSON anyway - your call. Command line (CLI) options should handle things that may change from run to run. They are also handy for quickly and easily changing logging metric options on the fly while debugging.
 
-This library supports all three types, but won't enforce semantic meaning to where you get your configuration from. This is based on the [confab](http://rjz.github.io/confab/) configuration tool's strategy (but it is not used after version 1.x) and [yargs](http://yargs.js.org/) command line interpreter and inspired by [this blog article](https://rjzaworski.com/2016/03/command-line-configuration-with-confab-and-yargs).
+This library supports all three types, but won't enforce semantic meaning based on where you get your configuration from. This is based on the [confab](http://rjz.github.io/confab/) configuration tool's strategy (but it is not used after version 1.x) and [yargs](http://yargs.js.org/) command line interpreter and inspired by [this blog article](https://rjzaworski.com/2016/03/command-line-configuration-with-confab-and-yargs).
 
 The order in which things are loaded are config files -> enviroment variables -> CLI. Subsequent values with the same name are overwritten left to right.
 
@@ -21,12 +21,13 @@ The order in which things are loaded are config files -> enviroment variables ->
 npm install @terryweiss/config
 ```
 
-#Usage
+#Usage#
+
 Each option can be expressed in a config file, an environment variable and command line option. Although
 each medium is available, the actual value need only appear in one (or none if you set default values). Each 
 option can have these properties set on it (see IOption for implementation details). 
 
-## IOption
+## IOption##
 | Property| Required? |Description |
 |---|---|---|
 | `name` | Required |The name of the option. When you load the configuration, this will be the name of the property on the config runtime instance |
@@ -39,7 +40,7 @@ option can have these properties set on it (see IOption for implementation detai
 | `type` | Optional | The data type. Can be `string`, `array`, `number`, `boolean`, `count`. As of 2.0, this only only validated on the CLI as the environment always comes in as strings. The `count` type is special and counts he number of times a flag appears. So for instance, -v will value as 1 and -vvvv will value as 4.
 | `choices` | Optional | An array of strings that define what values are allowed by the option. |
 
-## config
+## config##
 | Methods | Description |
 |---|---|
 | `load()` | The configuration is not available until you load it. Get all your options set up and then load it and after that the `config` instance will contain your values. |
@@ -51,7 +52,8 @@ option can have these properties set on it (see IOption for implementation detai
 
 Regardless of what value you provide for `flag`, 'shortFlag' or `envFlag`, the option will be named by the `name` property of the option. 
 
-#Examples
+#Examples#
+
 ```js
 const config = require( "@terryweiss/config" ).default;
 
