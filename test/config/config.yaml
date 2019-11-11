@@ -1,0 +1,7 @@
+someValue:
+  obj1:
+    - attr1
+    - attr2
+    - attr3
+  obj2:
+    fred: Flinstone
