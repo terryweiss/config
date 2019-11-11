@@ -17,3 +17,4 @@ if ( !hasToken ) {
 const instance: Config = ( <any>global )[ configMemoryToken ];
 
 export default instance;
+export {instance};

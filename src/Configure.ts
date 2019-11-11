@@ -210,6 +210,9 @@ class Configure {
 		if ( !isEmpty( cliOption.choices ) ) {
 			cl.choices = cliOption.choices;
 		}
+		if (cliOption.isArray){
+			cl.array = true;
+		}
 
 		this.cli.options( cliOption.flag, cl );
 	}
