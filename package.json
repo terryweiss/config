@@ -1,6 +1,6 @@
 {
   "name": "@terryweiss/config",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A configuration manager that simplifies getting options from ENV, CLI or file",
   "main": "index.js",
   "typings": "index.d.ts",
