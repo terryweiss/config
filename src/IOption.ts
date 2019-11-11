@@ -44,6 +44,10 @@ export interface IOption {
 	 * Limit responses to specific values
 	 */
 	choices?: string[];
+	/**
+	 * When true, the option will be able to be repeated on the command line to form an array
+	 */
+	isArray?: boolean;
 
 }
 

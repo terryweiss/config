@@ -4,6 +4,8 @@ const { join } = require( "path" );
 const tap = require( "tap" );
 
 const config = require( "../dist" ).default;
+const yargs = require("yargs");
+const { spawnSync } = require('child_process');
 
 config.setConfigFiles( [
 
@@ -79,3 +81,12 @@ tap.test( "CLI", ( t ) => {
 	t.end();
 } );
 
+tap.test( "CLI Array", ( t ) => {
+	config.reset();
+
+
+	const res = spawnSync("node ./arr.js", ["--names Barney", "--names Fred"], {shell: true});
+	t.equal( res.stdout.toString(), "[ 'Barney', 'Fred' ]\n" );
+
+	t.end();
+} );
